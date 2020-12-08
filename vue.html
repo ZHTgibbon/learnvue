@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <div class="container" id="app" v-cloak>
+        <p v-show="remainTask.length>0">
+            任务列表 ({{remainTask.length}})
+        </p>
+        <ul class="list-group">
+            <template v-for="task in remainTask">
+                <li class="list-group-item">
+        <span v-on:dblclick="editTask(task)" title="编辑任务">
+          {{task.text}}
+        </span>
+                    <button v-on:click="removeTask(task)" title="移除任务">
+                        &#10007;
+                    </button>
+                    <button v-on:click="completeTask(task)" title="任务完成">
+                        &#10004;
+                    </button>
+                </li>
+            </template>
+        </ul>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">
+                    任务描述
+                </label>
+                <input type="text" class="form-control" placeholder="请输入你要添加的任务" v-model="newTask"
+                       required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" v-on:click="addTask">
+                    添加任务
+                </button>
+            </div>
+        </form>
+        <p>
+            已完成的Task({{filterTask.length}})
+        </p>
+        <ol class="list-group">
+            <template v-for="task in filterTask">
+                <li class="list-group-item">
+                    {{task.text}}
+                </li>
+            </template>
+        </ol>
+    </div>
+    <script src="./vue.js"></script>
+    <script src="myvue.js"></script>
+    <script src="vue.css"></script>
+</head>
+<body>
+
+</body>
+</html>

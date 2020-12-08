@@ -1,0 +1,8 @@
+.list-group button {
+    background: none;
+    border: 0;
+    color: red;
+    outline: 0;
+    float: right;
+    font-weight: bold;
+}
