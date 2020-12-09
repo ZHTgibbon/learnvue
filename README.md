@@ -1,3 +1,3 @@
 # learnvue
 vue list
-ZHTgibbon.github.io/learnvue
+https://ZHTgibbon.github.io/learnvue
